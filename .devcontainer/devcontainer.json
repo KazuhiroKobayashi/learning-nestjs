@@ -1,0 +1,48 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+{
+  "name": "Learning-NestJS",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": { "DEBIAN_VERSION": "bookworm" }
+  },
+  "runArgs": ["--name=learning-nestjs"],
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": { "version": "latest" },
+    "ghcr.io/devcontainers/features/node:1": { "version": "lts" }
+  },
+  "customizations": {
+    "settings": {
+      "files.autoSave": "afterDelay",
+      "editor.formatOnSave": true,
+      "editor.renderWhitespace": "all",
+      "editor.suggestSelection": "first",
+      "editor.tabSize": 2,
+      "workbench.startupEditor": "none",
+      "terminal.integrated.defaultProfile.linux": "zsh",
+      "redhat.telemetry.enabled": false
+    },
+    "extensions": [
+      "bierner.markdown-preview-github-styles",
+      "gruntfuggly.todo-tree",
+      "streetsidesoftware.code-spell-checker",
+      "tyriar.sort-lines",
+      "mhutchie.git-graph",
+      "hediet.vscode-drawio",
+      "redhat.vscode-yaml",
+      "hilleer.yaml-plus-json",
+      "usernamehw.errorlens",
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "ms-vscode.vscode-typescript-next",
+      "visualstudioexptteam.vscodeintellicode"
+    ]
+  },
+  "remoteUser": "vscode",
+  "mounts": [
+    "target=${containerWorkspaceFolder}/node_modules,type=volume",
+    "target=${containerWorkspaceFolder}/tmp,type=volume"
+  ],
+  "postCreateCommand": ".devcontainer/post-create.sh",
+  "postStartCommand": ".devcontainer/post-start.sh"
+}
