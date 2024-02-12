@@ -8,8 +8,13 @@
   },
   "runArgs": ["--name=learning-nestjs"],
   "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": true,
+      "dockerDashComposeVersion": "v2"
+    },
     "ghcr.io/devcontainers/features/git:1": { "version": "latest" },
-    "ghcr.io/devcontainers/features/node:1": { "version": "lts" }
+    "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
   },
   "customizations": {
     "settings": {
@@ -32,6 +37,7 @@
       "redhat.vscode-yaml",
       "hilleer.yaml-plus-json",
       "usernamehw.errorlens",
+      "ms-azuretools.vscode-docker",
       "rangav.vscode-thunder-client",
       "esbenp.prettier-vscode",
       "dbaeumer.vscode-eslint",
